@@ -4,7 +4,6 @@ import pyaudio
 def voice_selection(voice):
   global engine
   custom = True
-  engine = pyttsx4.init('coqui_ai_tts')
   if voice == 1:
     selection = 'sound_files/Why_cobble_here.wav'
   elif voice == 2:
@@ -13,6 +12,7 @@ def voice_selection(voice):
     engine = pyttsx4.init()
     custom = False
   if custom:
+    engine = pyttsx4.init('coqui_ai_tts')
     engine.setProperty('speaker_wav', selection)
 
 

@@ -1,12 +1,13 @@
+import tkinter as tk
 import Tts
 import UserInput
 
 def selection_prompt():
     msg = "Select a Difficulty:"
-    print(msg)
-    print("1 = Easy")
-    print("2 = Moderate")
-    print("3 = Hard")
+    # print(msg)
+    # print("1 = Easy")
+    # print("2 = Moderate")
+    # print("3 = Hard")
     Tts.tts(msg)
 
 def set_guess_num(num):
@@ -25,13 +26,13 @@ def get_guess_str():
     global guess_str
     return guess_str
 
-def difficulty_selector():
+def difficulty_selector(difficulty):
     global guess_num
     difficulty_str = ""
     difficulty_mode = ""
-    selection_prompt()
-    difficulty = UserInput.get_user_input()
-    cont = True
+    # selection_prompt()
+    # difficulty = UserInput.get_user_input()
+    # cont = True
     if difficulty == "1":
         set_guess_num(10)
         set_guess_str("ten")
@@ -47,20 +48,20 @@ def difficulty_selector():
         set_guess_str("one hundred")
         difficulty_str = "three"
         difficulty_mode = "hard mode"
-    else:
-        cont = False
-        print("now false")
+    # else:
+    #     cont = False
+    #     # print("now false")
     
-    if cont == False:
-        msg = "please select an appropriate difficulty"
-        print(msg)
-        Tts.tts(msg)
-        difficulty_selector()
-    else:
-        msg = "difficulty level " + difficulty + " chosen"
-        msg_tts = "difficulty level " + difficulty_str + " chosen"
-        print(msg)
-        Tts.tts(msg_tts)
-        msg = difficulty_mode
-        print(msg)
-        Tts.tts(msg)
+    # if cont == False:
+    #     msg = "please select an appropriate difficulty"
+    #     # print(msg)
+    #     Tts.tts(msg)
+    #     difficulty_selector()
+    # else:
+    msg = "difficulty level " + difficulty + " chosen"
+    msg_tts = "difficulty level " + difficulty_str + " chosen"
+    # print(msg)
+    Tts.tts(msg_tts)
+    msg = difficulty_mode
+    # print(msg)
+    Tts.tts(msg)
