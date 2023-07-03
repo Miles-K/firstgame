@@ -44,6 +44,10 @@ def gameQuestion(user_input: int):
         # Cont = False
     # print(Msg)
 
+# def sayMsg():
+#     global Msg
+#     Tts.tts(Msg)
+
 def winCheck():
     Tts.tts(Msg)
     if Cont == True:

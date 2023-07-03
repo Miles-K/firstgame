@@ -55,8 +55,8 @@ def defineDifficultyFrame():
 
 def spawnDifficultyFrame():
     DifficultyFrame.place(
-                          x=((GWwidth / 2) - (DFwidth / 2)),
-                          y=((GWheight / 2) - (DFheight / 2) - 65)
+                          x=((GWwidth / 2) - (DFwidth / 2) + 40),
+                          y=((GWheight / 2) - (DFheight / 2) - 55)
     )
 
 def createDifficultyButtons():
@@ -93,8 +93,8 @@ def createGuessLabel():
         GameWindow, text=str(GLtxt), justify="center", width=str(GLwidth)
     )
     GuessLabel.place(
-                     x=((GWwidth / 2) - (GLwidth * 3.5) + 10),
-                     y=((GWheight / 2) - 50)
+                     x=((GWwidth / 2) - (GLwidth * 3.5) + 20),
+                     y=((GWheight / 2) - 60)
     )
 
 def updateGuessLabel():
@@ -112,8 +112,8 @@ def createGuessEntry():
     )
     GuessEntry.bind("<Return>", entryPassed)
     GuessEntry.place(
-                     x=((GWwidth / 2) - (GEwidth * 2)),
-                     y=((GWheight / 2) - 31)
+                     x=((GWwidth / 2) - (GEwidth * 2) + 7),
+                     y=((GWheight / 2) - 41)
     )
 
 #------------------------------------------------#
@@ -136,6 +136,8 @@ def screen3o1():
 
 def screen3o2():
     global first
+    # Msg = GameHandler.getMsg()
+    # GuessLabel.config(text=Msg)
     GameHandler.gameQuestionStart()
     if first == True:
         createGuessEntry()
@@ -166,8 +168,10 @@ def entryPassed(event):
     global GEtext
     GEtext = int(GuessEntry.get())
     GuessEntry.delete(0, tk.END)
-    GameWindow.update()
     GameHandler.gameQuestion(GEtext)
+    Msg = GameHandler.getMsg()
+    GuessLabel.config(text=Msg)
+    GameWindow.update()
     if GameHandler.winCheck() == False:
         screen3o2
 
