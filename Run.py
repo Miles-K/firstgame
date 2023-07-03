@@ -1,12 +1,13 @@
-import Difficulty
-import UserInput
 import Tts
-import GameHandler
 import GameGUI
+# import Difficulty
+# import UserInput
+# import GameHandler
 
 if __name__ == "__main__":
+    Tts.voiceSelection(0)
     GameGUI.run()
-    # Difficulty.difficulty_selector()
-    # GameHandler.game_question_start()
-    # GameHandler.game_question()
+    # Difficulty.difficultySelector()
+    # GameHandler.gameQuestionStart()
+    # GameHandler.gameQuestion()
     

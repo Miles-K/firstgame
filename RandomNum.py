@@ -1,4 +1,4 @@
 import numpy as np
 
-def random_int(max):
+def randomInt(max):
     return np.random.randint(1, max)

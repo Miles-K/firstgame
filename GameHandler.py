@@ -4,60 +4,60 @@ import Difficulty
 import RandomNum
 import PlaySound
 
-def game_question_start():
-    global guess_num
-    global guess_str
-    global ran_num
-    global msg
-    guess_num = Difficulty.get_guess_num()
-    guess_str = Difficulty.get_guess_str()
-    ran_num = RandomNum.random_int(guess_num)
-    # msg = "I am thinking of a number between 1 and " + str(guess_num) + ". Try to guess what it is."
-    msg_tts = msg
-    # print(msg)
-    Tts.tts(msg_tts)
+def gameQuestionStart():
+    global GuessNum
+    global GuessStr
+    global RanNum
+    global Msg
+    GuessNum = Difficulty.getGuessNum()
+    GuessStr = Difficulty.getGuessStr()
+    RanNum = RandomNum.randomInt(GuessNum)
+    # Msg = "I am thinking of a number between 1 and " + str(GuessNum) + ". Try to guess what it is."
+    MsgTts = Msg
+    # print(Msg)
+    Tts.tts(MsgTts)
 
-def game_question_ask():
-    msg = "What number would you like to guess? "
-    Tts.tts(msg)
+def gameQuestionAsk():
+    Msg = "What number would you like to guess? "
+    Tts.tts(Msg)
 
-def game_question(user_input: int):
-    global msg
-    global cont
-    cont = False
-    # msg = "What number would you like to guess? "
+def gameQuestion(user_input: int):
+    global Msg
+    global Cont
+    Cont = False
+    # Msg = "What number would you like to guess? "
     # GameGUI.updateGuessLabel()
-    # print(msg)
-    # Tts.tts(msg)
-    # user_input = int(UserInput.get_user_input())
-    if user_input == ran_num:
-        msg = "Congradulations, you won!"
+    # print(Msg)
+    # Tts.tts(Msg)
+    # user_input = int(UserInput.getUserInput())
+    if user_input == RanNum:
+        Msg = "Congradulations, you won!"
         # GameGUI.updateGuessLabel()
-        cont = True
-    elif user_input < ran_num:
-        msg = "Darn, try again. The number is bigger than your last guess"
+        Cont = True
+    elif user_input < RanNum:
+        Msg = "Darn, try again. The number is bigger than your last guess"
         # GameGUI.updateGuessLabel()
-        # cont = False
+        # Cont = False
     else:
-        msg = "Darn, try again. The number is smaller than your last guess"
+        Msg = "Darn, try again. The number is smaller than your last guess"
         # GameGUI.updateGuessLabel()
-        # cont = False
-    # print(msg)
+        # Cont = False
+    # print(Msg)
 
-def win_check():
-    Tts.tts(msg)
-    if cont == True:
-        # game_question()
-        PlaySound.winning_sound()
+def winCheck():
+    Tts.tts(Msg)
+    if Cont == True:
+        # gameQuestion()
+        PlaySound.winningSound()
     else:
-        return cont
+        return Cont
 
 def setMsg(message):
-    global msg
-    msg = message
+    global Msg
+    Msg = message
 
 def getMsg():
-    return msg
-# def set_guess_num(num):
-# def get_guess_num():
-#     return guess_num
+    return Msg
+# def setGuessNum(num):
+# def getGuessNum():
+#     return GuessNum

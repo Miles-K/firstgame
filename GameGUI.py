@@ -4,7 +4,6 @@ import GameHandler
 import Tts
 
 def run():
-    Tts.voice_selection(0)
     defineWindow()
     createPlayButton()
     spawnWindow()
@@ -86,8 +85,8 @@ def createDifficultyButtons():
     HardBtn.grid(row=0, column=2, sticky="news")
     
 def createGuessLabel():
-    global GLtxt
     global GuessLabel
+    global GLtxt
     GLwidth = 100
     GLtxt = GameHandler.getMsg()
     GuessLabel = tk.Label(
@@ -105,8 +104,8 @@ def updateGuessLabel():
     GuessLabel.update()
 
 def createGuessEntry():
-    GEwidth = 16
     global GuessEntry
+    GEwidth = 16
     GuessEntry = tk.Entry(
         GameWindow, textvariable="[Answer Here]",
         borderwidth="2", justify="center", width=str(GEwidth)
@@ -117,7 +116,7 @@ def createGuessEntry():
                      y=((GWheight / 2) - 31)
     )
 
-
+#------------------------------------------------#
 
 def screen2(event):
     PlayBtn.destroy()
@@ -125,20 +124,19 @@ def screen2(event):
     createDifficultyButtons()
     spawnDifficultyFrame()
     GameWindow.update()
-    Difficulty.selection_prompt()
+    Difficulty.selectionPrompt()
 
 def screen3o1():
     global first
     first = True
     clearDifficultyButtons()
-    GameHandler.setMsg("I am thinking of a number between one and " + Difficulty.get_guess_str() + ". Try to guess what it is.")
+    GameHandler.setMsg("I am thinking of a number between one and " + Difficulty.getGuessStr() + ". Try to guess what it is.")
     createGuessLabel()
     GameWindow.update()
 
-
 def screen3o2():
     global first
-    GameHandler.game_question_start()
+    GameHandler.gameQuestionStart()
     if first == True:
         createGuessEntry()
         first = False
@@ -150,17 +148,17 @@ def clearDifficultyButtons():
     DifficultyFrame.destroy()
 
 def difficultySelectionEasy(event):
-    Difficulty.difficulty_selector("1")
+    Difficulty.difficultySelector("1")
     screen3o1()
     screen3o2()
 
 def difficultySelectionModerate(event):
-    Difficulty.difficulty_selector("2")
+    Difficulty.difficultySelector("2")
     screen3o1()
     screen3o2()
 
 def difficultySelectionHard(event):
-    Difficulty.difficulty_selector("3")
+    Difficulty.difficultySelector("3")
     screen3o1()
     screen3o2()
 
@@ -169,8 +167,9 @@ def entryPassed(event):
     GEtext = int(GuessEntry.get())
     GuessEntry.delete(0, tk.END)
     GameWindow.update()
-    GameHandler.game_question(GEtext)
-    if GameHandler.win_check() == False:
+    GameHandler.gameQuestion(GEtext)
+    if GameHandler.winCheck() == False:
         screen3o2
 
-run()
+if __name__ == "__main__":
+    run()

@@ -1,11 +1,11 @@
-def get_user_input():
-  user_input = input()
-  return user_input
+def getUserInput():
+  UserInput = input()
+  return UserInput
 
-def get_user_input_m(input_msg):
-  user_input = input(input_msg)
-  return user_input
+def getUserInput_m(input_msg):
+  UserInput = input(input_msg)
+  return UserInput
 
 if __name__ == "__main__":
-  user_input = get_user_input()
-  print("You entered:", user_input)
+  UserInput = getUserInput()
+  print("You entered:", UserInput)
