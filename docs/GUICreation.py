@@ -1,4 +1,6 @@
+import os
 import tkinter as tk
+from PIL import ImageTk, Image
 
 Window = tk.Tk()
 Window.title("Hello World")
@@ -77,4 +79,21 @@ Label = tk.Label(
 )
 Label.pack()
 
+CascadeImage = Image.open("C:/Users/miles/Documents/Python/firstgame/image_files/Mario.png")
+CascadeImage.thumbnail((480, 360))
+CascadeImageCreate = ImageTk.PhotoImage(CascadeImage)
+CascadeImageLabel = tk.Label(Window, image=CascadeImageCreate)
+CascadeImageLabel.pack()
+# ImagePath = os.path.normpath("C:/Users/miles/Documents/Python/firstgame/image_files/mario.png")#os.path.join(os.path.split(__file__)[0], "mario.png")
+# img = tk.Image("photo", file=pint.pintk.plk.icon_img)
+# Image = tk.Image("photo", file=ImagePath)
+
 Window.mainloop()
+
+
+# label1 = tk.Label(image=test)
+# # label1.image = test
+
+# # Position image
+# label1.place(x=1, y=1)
+# root.mainloop()

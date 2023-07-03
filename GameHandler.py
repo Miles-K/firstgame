@@ -51,8 +51,9 @@ def gameQuestion(user_input: int):
 def winCheck():
     Tts.tts(Msg)
     if Cont == True:
+        print("stuff")
         # gameQuestion()
-        PlaySound.winningSound()
+        # PlaySound.winningSound()
     else:
         return Cont
 

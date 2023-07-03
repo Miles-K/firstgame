@@ -1,6 +1,8 @@
+from PIL import ImageTk, Image
 import tkinter as tk
 import Difficulty
 import GameHandler
+import PlaySound
 import Tts
 
 def run():
@@ -174,6 +176,57 @@ def entryPassed(event):
     GameWindow.update()
     if GameHandler.winCheck() == False:
         screen3o2
+    else:
+        # CascadeImage = Image.open("C:/Users/miles/Documents/Python/firstgame/image_files/Cascade.png")
+        # CascadeImage.thumbnail((480, 360))
+        # CascadeImageCreate = ImageTk.PhotoImage(CascadeImage)
+        # CascadeImageLabel = tk.Label(GameWindow, image=CascadeImageCreate)
+        # CascadeImageLabel.pack()
+        # GameWindow.update()
+        # end()
+        PlaySound.winningSound()
+
+def end():
+    ImageFrame = tk.Frame(GameWindow, width="1000", height="800")
+    Cascade = Image.open("C:/Users/miles/Documents/Python/firstgame/image_files/Cascade.png")
+    Cascade.thumbnail((480, 360))
+    CascadeImage = ImageTk.PhotoImage(Cascade)
+    CascadeLabel = tk.Label(ImageFrame, image=CascadeImage)
+
+    Falls = Image.open("C:/Users/miles/Documents/Python/firstgame/image_files/Falls.png")
+    Falls.thumbnail((480, 360))
+    FallsImage = ImageTk.PhotoImage(Falls)
+    FallsLabel = tk.Label(ImageFrame, image=FallsImage)
+
+    Mario = Image.open("C:/Users/miles/Documents/Python/firstgame/image_files/Mario.png")
+    # Mario.thumbnail((480, 360))
+    MarioImage = ImageTk.PhotoImage(Mario)
+    MarioLabel = tk.Label(ImageFrame, image=MarioImage)
+
+    Moon = Image.open("C:/Users/miles/Documents/Python/firstgame/image_files/Moon.png")
+    Moon.thumbnail((480, 360))
+    MoonImage = ImageTk.PhotoImage(Moon)
+    MoonLabel = tk.Label(ImageFrame, image=MoonImage)
+
+    MultiMoon = Image.open("C:/Users/miles/Documents/Python/firstgame/image_files/MultiMoon.png")
+    # MultiMoon.thumbnail((480, 360))
+    MultiMoonImage = ImageTk.PhotoImage(MultiMoon)
+    MultiMoonLabel = tk.Label(ImageFrame, image=MultiMoonImage)
+
+    Odyssey = Image.open("C:/Users/miles/Documents/Python/firstgame/image_files/Odyssey.png")
+    Odyssey.thumbnail((480, 360))
+    OdysseyImage = ImageTk.PhotoImage(Odyssey)
+    OdysseyLabel = tk.Label(ImageFrame, image=OdysseyImage)
+
+    # CascadeLabel.pack()
+    CascadeLabel.place(x=20, y=20)
+    FallsLabel.place(x=600, y=600)
+    MarioLabel.place(x=700, y=100)
+    MoonLabel.place(x=50, y=300)
+    MultiMoonLabel.place(x=450, y=450)
+    OdysseyLabel.place(x=200, y=550)
+    ImageFrame.pack()
+    GameWindow.update()
 
 if __name__ == "__main__":
     run()
