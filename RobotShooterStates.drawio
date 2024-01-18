@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-18T23:26:03.808Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 OPR/106.0.0.0" etag="sh0xMeJ_TccoVrJoT4Nj" version="22.1.21" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-18T23:27:16.410Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 OPR/106.0.0.0" etag="h9a4jvMKOvJXFQ6PRZDo" version="22.1.21" type="github">
   <diagram name="Page-1" id="G63Jx9XFbe4Q4K82k8r4">
     <mxGraphModel dx="837" dy="819" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -22,8 +22,11 @@
         <mxCell id="zvF68lXvf7BZl_Omjtcy-6" value="handing off" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="300" y="360" width="210" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="zvF68lXvf7BZl_Omjtcy-7" value="prepare to shoot" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zvF68lXvf7BZl_Omjtcy-7" value="prepare to climb" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="550" y="100" width="210" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="zvF68lXvf7BZl_Omjtcy-8" value="is climbing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="230" width="210" height="110" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
